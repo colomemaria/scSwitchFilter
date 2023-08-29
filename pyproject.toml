@@ -1,0 +1,38 @@
+[project]
+name = "sc-sw-filt"
+version = "0.0.1"
+description = "Single cell data cleaning package."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE.txt"}
+keywords = ["single cell", "filtering", "index switching"]
+authors = [
+  { name="Atai Dobrynin", email="atay.dobrynin@gmail.com" }
+]
+maintainers = [
+  { name="Atai Dobrynin", email="atay.dobrynin@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    numpy,
+    pandas,
+    scipy,
+    ]
+
+[project.optional-dependencies]
+dev = []
+test = []
+
+[project.urls]
+"Homepage" = "https://github.com/colomemaria/sc-switch-filtering"
+"Bug Tracker" = "https://github.com/colomemaria/sc-switch-filtering/issues"
+
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
