@@ -1,5 +1,5 @@
 [project]
-name = "sc-sw-filt"
+name = "scswfilt"
 version = "0.0.1"
 description = "Single cell data cleaning package."
 readme = "README.md"
@@ -19,10 +19,13 @@ classifiers = [
 ]
 
 dependencies = [
-    numpy,
-    pandas,
-    scipy,
+    "numpy",
+    "pandas",
+    "scipy",
     ]
+    
+[project.scripts]
+compute_neg_matrix = "scswfilt.__main__:main"
 
 [project.optional-dependencies]
 dev = []
