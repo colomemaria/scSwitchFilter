@@ -1,5 +1,5 @@
 [project]
-name = "scswfilt"
+name = "scSwitchFilter"
 version = "0.0.1"
 description = "Single cell data cleaning package."
 readme = "README.md"
@@ -25,7 +25,7 @@ dependencies = [
     ]
     
 [project.scripts]
-compute_neg_matrix = "scswfilt.__main__:main"
+compute_correction_matrix = "scswitchfilter.__main__:main"
 
 [project.optional-dependencies]
 dev = []
