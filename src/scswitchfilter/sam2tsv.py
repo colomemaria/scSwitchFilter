@@ -18,7 +18,7 @@ def sam2tsv(input_file, output_file, tag_len, index1_len, index2_len):
                 # extract columns GN, CB, UB 
                 # extract rows without "-" in columns 
                 # remove STAR attribute tags| parse CB to index1, index2, TAG
-                grep -E 'GN:Z' $INPUT_FILE| cut -f17,19,20 | grep -v ':-' | sed -r 's/(..:Z:)//g' | head |
+                grep -E 'GN:Z' $INPUT_FILE| cut -f17,19,20 | grep -v ':-' | sed -r 's/(..:Z:)//g' |
                 awk '{{s1=substr($2,1,{index1_len})}} \\
                      {{s2=substr($2,{pos1},{index2_len})}} \\
                      {{print $1"\\t"s1"\\t"s2"\\t"s3"\\t"$3}}' >> $OUTPUT_FILE
@@ -37,7 +37,7 @@ def sam2tsv(input_file, output_file, tag_len, index1_len, index2_len):
                 # extract columns GN, CB, UB 
                 # extract rows without "-" in columns 
                 # remove STAR attribute tags| parse CB to index1, index2, TAG
-                grep -E 'GN:Z' $INPUT_FILE|cut -f17,19,20|grep -v ':-'|sed -r 's/(..:Z:)//g'| head |
+                grep -E 'GN:Z' $INPUT_FILE|cut -f17,19,20|grep -v ':-'|sed -r 's/(..:Z:)//g'|
                 awk '{{s1=substr($2,1,{index1_len})}} \\
                      {{s2=substr($2,{pos1},{index2_len})}} \\
                      {{s3=substr($2,{pos2},{tag_len})}} \\
