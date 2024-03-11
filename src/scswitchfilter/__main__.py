@@ -20,7 +20,8 @@ def main():
     args = parser.parse_args()
     bam2sam(args.filename, args.outname, args.samtools_path)
     sam2tsv(f"{args.outname}.sam", f"{args.outname}.tsv", args.tag, args.index1, args.index2)
-    neg_matrix = generate_negative_matrix(f"{args.outname}.tsv", threshold=args.threshold)
+    is_tag = False if is_tag == 0 else True
+    neg_matrix = generate_negative_matrix(f"{args.outname}.tsv", threshold=args.threshold, is_tag=is_tag)
     neg_matrix.to_csv(f"{args.outname}_negative_matrix.csv")
     print(f'Elapsed time: {time.time() - start_time} seconds.')
 
